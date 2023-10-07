@@ -105,7 +105,11 @@ function addMiddlewares(middlewares) {
 
 function ignoreModels(models, ignore) {
   return models.filter((model) => {
-    if (models.length ? !ignore.find((item) => item === modelName) : true) {
+    if (
+      models.length
+        ? !ignore.find((item) => item === model.replace(".js", ""))
+        : true
+    ) {
       return model;
     }
   });

@@ -47,6 +47,7 @@ exports.auth = async (req, res) => {
               login_id: login.login_id,
               login_name: login.login_name,
               login_email: login_email,
+              login_type: login.login_type,
               access_token: access_token,
             });
           }
@@ -85,6 +86,7 @@ exports.createAuth = async (req, res) => {
       login_name: req.body.login_name,
       login_type: req.body.login_type,
       login_photo_url: req.body.login_photo_url,
+      created_by: req.body.created_by || null,
     };
 
     let saved_login = await Login.create(login);
@@ -94,6 +96,7 @@ exports.createAuth = async (req, res) => {
       login_email: saved_login.login_email,
       login_name: saved_login.login_name,
       login_type: saved_login.login_type,
+      created_by: saved_login.created_by,
     });
   } else {
     return res
