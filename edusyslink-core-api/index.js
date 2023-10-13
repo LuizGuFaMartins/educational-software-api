@@ -13,7 +13,6 @@ const sequelizeMiddleware =
 module.exports = function (options) {
   options = verifyOptions(options);
   verifyPath(options.routes.modelsPath, options.routes.generateRoutes);
-  console.log("\n\n\n OPTIONS: ", options, "\n\n\n");
   if (options.authentication.provide && options.models.useDefaultModels) {
     options.routes.middlewares = [...options.routes.middlewares, verifyToken];
     router.use(authRouter);

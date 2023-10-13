@@ -4,6 +4,7 @@ const cors = require("cors");
 require("dotenv").config();
 
 const expressCoreApi = require("../edusyslink-core-api");
+const router = require("./routes/routes");
 
 const app = express();
 
@@ -30,5 +31,7 @@ app.use(
     },
   })
 );
+
+app.use(router);
 
 module.exports = app;
