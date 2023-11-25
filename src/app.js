@@ -23,11 +23,9 @@ app.use(
     },
     authentication: {
       provide: true,
-      ignoreModels: ["students", "teachers"],
     },
     models: {
       useDefaultModels: true,
-      ignoreModels: [],
     },
   })
 );

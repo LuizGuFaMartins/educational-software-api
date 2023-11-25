@@ -24,6 +24,6 @@ const Course = database.define(
   },
 );
 
-Course.sync();
+// Course.sync();
 
 module.exports = Course;

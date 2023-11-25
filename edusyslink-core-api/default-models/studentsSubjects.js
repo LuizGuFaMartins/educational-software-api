@@ -31,6 +31,6 @@ StudentSubject.belongsTo(Student, {
   allowNull: false,
 });
 
-StudentSubject.sync();
+// StudentSubject.sync();
 
 module.exports = StudentSubject;

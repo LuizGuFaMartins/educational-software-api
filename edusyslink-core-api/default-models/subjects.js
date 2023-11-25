@@ -38,6 +38,6 @@ const Subject = database.define(
 Subject.belongsTo(Teacher, { foreignKey: "teacher_id", allowNull: false });
 Subject.belongsTo(Course, { foreignKey: "course_id", allowNull: false });
 
-Subject.sync();
+// Subject.sync();
 
 module.exports = Subject;

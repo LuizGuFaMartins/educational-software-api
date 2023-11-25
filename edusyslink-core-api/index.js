@@ -7,6 +7,7 @@ const {
 } = require("./authentication/controllers/authentication-controller");
 const authRouter = require("./authentication/routes/authentication-router");
 const { verifyToken } = require("./middlewares/authentication-middleware");
+const syncModels = require("./resources/sync-database");
 const sequelizeMiddleware =
   require("./middlewares/sequelize-middleware").middleware;
 
@@ -31,6 +32,7 @@ module.exports = function (options) {
   }
 
   if (options.models.useDefaultModels) {
+    syncModels();
     const defaultModelspath = __dirname + "/default-models";
     let defaultModels = getModels(defaultModelspath);
     defaultModels = ignoreModels(defaultModels, options.models.ignoreModels);
