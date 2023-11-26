@@ -5,8 +5,6 @@ const { Sequelize } = require("sequelize");
 
 exports.findActivitiesPerStudentSubjects = async (req, res) => {
   try {
-    console.log("\n\n\n\nPASSOUUUUUUUUUUUUUU\n\n\n\n");
-
     const studentSubject = await StudentSubject.findAll({
       include: [
         {

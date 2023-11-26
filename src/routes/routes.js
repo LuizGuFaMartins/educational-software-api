@@ -5,7 +5,7 @@ const subjectsController = require("../controllers/subjectsController");
 const { verifyToken } = require("../../edusyslink-core-api/middlewares/authentication-middleware");
 
 // activities
-router.get("/activities/:studentId", verifyToken, activityController.findActivitiesPerStudentSubjects);
+router.get("/activities/registered/:studentId", verifyToken, activityController.findActivitiesPerStudentSubjects);
 
 // subjects
 router.get("/subjects/registered/:studentId", verifyToken, subjectsController.findPerStudent);
