@@ -1,4 +1,4 @@
-const StudentSubject = require("../../edusyslink-core-api/default-models/studentsSubjects");
+const StudentSubject = require("../models/studentsSubjects");
 const Subject = require("../../edusyslink-core-api/default-models/subjects");
 const { Sequelize } = require("sequelize");
 const Teacher = require("../../edusyslink-core-api/default-models/teachers");

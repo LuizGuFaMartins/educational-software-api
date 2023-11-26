@@ -1,7 +1,7 @@
 const Sequelize = require("sequelize");
-const database = require("../resources/database");
-const Subject = require("./subjects");
-const Student = require("./students");
+const database = require("../../edusyslink-core-api/resources/database");
+const Subject = require("../../edusyslink-core-api/default-models/subjects");
+const Student = require("../../edusyslink-core-api/default-models/students");
 
 const StudentSubject = database.define(
   "students_subjects",
@@ -30,7 +30,5 @@ StudentSubject.belongsTo(Student, {
   foreignKey: "student_id",
   allowNull: false,
 });
-
-// StudentSubject.sync();
 
 module.exports = StudentSubject;

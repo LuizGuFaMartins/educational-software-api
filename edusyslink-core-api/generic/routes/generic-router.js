@@ -12,11 +12,11 @@ router.post("/", genericController.create);
 
 router.get("/:id", associateRelation, genericController.findById);
 
-router.get(
-  "/:id/:relation",
-  associateRelation,
-  genericController.findWithRelation
-);
+// router.get(
+//   "/:id/:relation",
+//   associateRelation,
+//   genericController.findWithRelation
+// );
 
 router.put("/:id", genericController.update);
 

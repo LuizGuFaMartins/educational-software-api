@@ -8,7 +8,7 @@ const { verifyToken } = require("../../edusyslink-core-api/middlewares/authentic
 router.get("/activities/:studentId", verifyToken, activityController.findActivitiesPerStudentSubjects);
 
 // subjects
-router.get("/subjects/:studentId", verifyToken, subjectsController.findPerStudent);
+router.get("/subjects/registered/:studentId", verifyToken, subjectsController.findPerStudent);
 router.post("/subjects/cancel", verifyToken, subjectsController.cancelSubscription);
 router.post("/subjects/subscribe", verifyToken, subjectsController.subscribe);
 

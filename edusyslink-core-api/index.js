@@ -32,12 +32,13 @@ module.exports = function (options) {
   }
 
   if (options.models.useDefaultModels) {
-    syncModels();
     const defaultModelspath = __dirname + "/default-models";
     let defaultModels = getModels(defaultModelspath);
     defaultModels = ignoreModels(defaultModels, options.models.ignoreModels);
     createModelsRoutes(defaultModels, middlewares, defaultModelspath);
   }
+
+  syncModels();
 
   return router;
 };
@@ -125,7 +126,7 @@ function createModelsRoutes(models, middlewares, modelsPath) {
       router.use(route, middlewares, function (req, res, next) {
         req.routeModel = {
           modelName: modelName,
-          models: models,
+          models: models.map((model) => model.replace(".js", "")),
           model: model,
           path: modelsPath,
         };

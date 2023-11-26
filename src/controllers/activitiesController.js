@@ -1,10 +1,12 @@
-const StudentSubject = require("../../edusyslink-core-api/default-models/studentsSubjects");
+const StudentSubject = require("../models/studentsSubjects");
 const Subject = require("../../edusyslink-core-api/default-models/subjects");
 const Activity = require("../../edusyslink-core-api/default-models/activities");
 const { Sequelize } = require("sequelize");
 
 exports.findActivitiesPerStudentSubjects = async (req, res) => {
   try {
+    console.log("\n\n\n\nPASSOUUUUUUUUUUUUUU\n\n\n\n");
+
     const studentSubject = await StudentSubject.findAll({
       include: [
         {
